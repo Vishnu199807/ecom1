@@ -1,0 +1,35 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                <img src="{{order.product.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{order.product.product_name}}</h5>
+                    <p class="card-text">{{order.product.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Address:{{order.delivery_address}}</li>
+                    <li class="list-group-item">Customer:{{order.user}}</li>
+                    <li class="list-group-item">email:{{order.user.email}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link"></a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-3">
+                <form action="" method="post">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <input type="submit" value="update">
+                </form>
+            </div>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,8 @@
+<h2>Change Quantity</h2>
+<form method="POST" action="{% url 'change_quantity' product.id %}">
+  {% csrf_token %}
+  <label for="quantity">New Quantity:</label>
+  <input type="number" id="quantity" name="quantity" value="{{ product.quantity }}">
+  <br>
+  <input type="submit" value="Save Quantity">
+</form>

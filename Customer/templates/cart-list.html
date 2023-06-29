@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        {%for cart in carts%}
+        <div class="col-1">
+
+        </div>
+        <div class="col-6">
+                        <div class="card mb-5">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{cart.product.image.url}}" alt="..." height="500px"/>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{cart.product.product_name}}</h5>
+                                    <!-- Product price-->
+                                    ${{cart.product.price}}
+
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+
+                        </div>
+            </div>
+
+        <div class="col-2">
+            qty:{{cart.qty}}
+            status:{{cart.status}}
+        </div>
+        <div class="col-3">
+            {%if cart.satus != "cancelled"%}
+            <a href="{%url 'remove-product' cart.id %}" class="btn btn-outline-danger">Remove</a>
+            {%endif%}
+            {%if cart.status != "order-placed"%}
+            <a href="{%url 'place-order' cart.id cart.product.id%}" class="btn btn-outline-success">Checkout</a>
+            {%endif%}
+        </div>
+        {%endfor%}
+    </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,6 @@
+<h2>Add Product</h2>
+<form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add</button>
+</form>

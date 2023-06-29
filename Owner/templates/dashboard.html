@@ -1,0 +1,65 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+</head>
+<body>
+<div class="container">
+<!--    <div class="row">-->
+<!--        <div class="col-4"></div>-->
+<!--        <div class="col-4">-->
+<!--            {%if messages%}-->
+<!--                {%for m in messages%}-->
+<!--                    <div class="alert alert-warning alert-dismissible fade show" role="alert">-->
+<!--                    <strong>{{m}}</strong>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                {%endfor%}-->
+<!--            {%endif%}-->
+<!--        </div>-->
+<!--        <div class="col-4"></div>-->
+<!--    </div>-->
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-7">
+            <img src="../images/shopping.png"
+          class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-4"></div>
+        <div class="col-7">
+            <h1>Welcome Admin {{request.user}}</h1>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <div class="btn btn-info">
+                <h4>New_Orders - {{count}}</h4>
+            </div>
+        </div>
+        <div class="col-4">
+            <a href="{%url 'neworders'%}" class="btn btn-outline-success">view</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 mt-5">
+<!--            <img src="../images/image2.jpg"-->
+<!--          class="img-fluid" alt="Phone image">-->
+        </div>
+        <div class="col-2"></div>
+    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-4"></div>-->
+<!--        <div class="col-4">-->
+<!--            <a href="{%url 'products-all'%}" class="btn btn-outline-warning mt-5">List-Products</a>-->
+<!--        </div>-->
+<!--        <div class="col-4"></div>-->
+<!--    </div>-->
+</div>
+</body>
+{%endblock%}

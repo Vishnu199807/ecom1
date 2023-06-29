@@ -1,0 +1,25 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+<div class="row">
+        {%for product in products%}
+        <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{product.image.url}}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{product.product_name}}</h5>
+                                    <!-- Product price-->
+                                    ${{product.price}}
+                                    <p>{{product.description}}</p>
+                                    <p>{{product.category}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        {%endfor%}
+    </div>
+{%endblock%}
